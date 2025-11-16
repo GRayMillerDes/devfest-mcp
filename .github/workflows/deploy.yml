@@ -14,11 +14,11 @@ jobs:
           persist-credentials: false # ensure we can use a PAT for pushing
           fetch-depth: 0
 
-      - name: Verify GITHUB_TOKEN (diagnostic)
+      - name: Verify Pages token (diagnostic)
         shell: bash
         run: |
-          echo "Checking repository API with provided token (will not print token)..."
-          http_code=$(curl -s -o /dev/null -w "%{http_code}" -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" "https://api.github.com/repos/${{ github.repository }}/branches") || true
+          echo "Checking repository API with provided Pages token (will not print token)..."
+          http_code=$(curl -s -o /dev/null -w "%{http_code}" -H "Authorization: token ${{ secrets.GH_PAGES_TOKEN }}" "https://api.github.com/repos/${{ github.repository }}/branches") || true
           echo "Repository API HTTP status: $http_code"
 
       - name: Configure Git User
@@ -29,7 +29,7 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          personal_token: ${{ secrets.GITHUB_TOKEN }}
+          personal_token: ${{ secrets.GH_PAGES_TOKEN }}
           publish_dir: ./
           publish_branch: gh-pages
           allow_empty_commit: true
