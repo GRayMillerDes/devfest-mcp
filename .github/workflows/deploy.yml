@@ -19,6 +19,18 @@ jobs:
       - name: Install dependencies
         run: |
           npm install || true
+      - name: Verify GH_PAGES_TOKEN and git state
+        env:
+          REPO_API: https://api.github.com/repos/${{ github.repository }}/branches
+        run: |
+          echo "Checking PAT access (HTTP code):"
+          curl -s -o /dev/null -w "%{http_code}\n" -H "Authorization: token ${{ secrets.GH_PAGES_TOKEN }}" "$REPO_API"
+          echo "Git info:"
+          git --version
+          git remote -v || true
+          git branch -a || true
+          git config --get user.name || true
+          git config --get user.email || true
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
