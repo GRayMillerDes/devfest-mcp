@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8"> 
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Google DevFest Workshop | Gray Miller</title>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Roboto', 'Montserrat', Arial, sans-serif;
+      background: #f6f8fa;
+      color: #22223b;
+    }
+    .navbar {
+      background: #fff;
+      box-shadow: 0 2px 8px rgba(107, 70, 193, 0.08);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0 0;
+      border-bottom: 1.5px solid #e9d5ff;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    .navbar-inner {
+      display: flex;
+      gap: 0;
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+      align-items: center;
+      padding: 0 24px;
+    }
+    .navbar a {
+      color: #6b46c1;
+      text-decoration: none;
+      font-weight: 700;
+      letter-spacing: 1px;
+      font-size: 1.08em;
+      padding: 18px 22px;
+      border-radius: 0;
+      transition: background 0.2s, color 0.2s;
+      display: block;
+    }
+    .navbar a:hover {
+      background: #f3e8ff;
+      color: #9333ea;
+    }
+    .hero {
+      max-width: 900px;
+      margin: 48px auto 0 auto;
+      background: #fff;
+      border-radius: 18px;
+      box-shadow: 0 8px 32px rgba(107, 70, 193, 0.10);
+      padding: 56px 48px 40px 48px;
+      text-align: center;
+      border: 1.5px solid #e9d5ff;
+      position: relative;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: -12px;
+      left: 40px;
+      width: 60px;
+      height: 5px;
+      background: linear-gradient(90deg, #6b46c1, #9333ea);
+      border-radius: 2px;
+    }
+    .hero h1 {
+      margin: 0 0 18px 0;
+      font-size: 2.7em;
+      font-weight: 900;
+      background: linear-gradient(135deg, #6b46c1, #9333ea);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      letter-spacing: 2px;
+    }
+    .hero .topic {
+      color: #7c3aed;
+      font-size: 1.22em;
+      margin: 10px 0 32px 0;
+      letter-spacing: 1.2px;
+      font-weight: 700;
+    }
+    .hero p {
+      font-size: 1.12em;
+      line-height: 1.85;
+      margin: 16px 0;
+      color: #4a5568;
+    }
+    .contact {
+      margin-top: 38px;
+      font-size: 1.08em;
+      padding: 16px 32px;
+      background: linear-gradient(90deg, #6b46c1, #9333ea);
+      border-radius: 14px;
+      display: inline-block;
+      color: #fff;
+      box-shadow: 0 4px 16px rgba(107, 70, 193, 0.18);
+      font-weight: 500;
+      transition: transform 0.3s ease;
+    }
+    .contact:hover {
+      transform: translateY(-2px) scale(1.03);
+    }
+    .contact a {
+      color: #e9d5ff;
+      text-decoration: underline;
+    }
+    .footer {
+      text-align: center;
+      font-size: 1.08em;
+      color: #6b46c1;
+      background: none;
+      margin: 60px 0 20px 0;
+      letter-spacing: 1px;
+    }
+    @media (max-width: 700px) {
+      .navbar-inner {
+        padding: 0 8px;
+      }
+      .hero {
+        margin: 18px 8px 0 8px;
+        padding: 28px 12px 18px 12px;
+        border-radius: 12px;
+      }
+      .hero h1 {
+        font-size: 1.7em;
+      }
+      .hero .topic {
+        font-size: 1em;
+      }
+      .hero p {
+        font-size: 0.98em;
+      }
+      .contact {
+        font-size: 0.95em;
+        padding: 10px 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="navbar">
+    <div class="navbar-inner">
+      <a href="/devfest-mcp-website/index.html">首页</a>
+      <a href="/devfest-mcp-website/gdg-devfest.html">GDG与DevFest</a>
+      <a href="/devfest-mcp-website/devtools-mcp.html">DevTools MCP</a>
+      <a href="/devfest-mcp-website/about.html">关于我</a>
+    </div>
+  </div>
+  <div class="hero">
+    <h1>Google DevFest Workshop</h1>
+    <div class="topic">主题：Chrome DevTools MCP Server</div>
+    <p>欢迎来到本次 DevFest Workshop 活动官网！这里记录了我参加的一场以 Google Chrome DevTools MCP Server 为主题的技术 Workshop。本次活动旨在深入交流、互助成长。</p>
+    <p><strong>Workshop 亮点：</strong><br>
+      • 深度体验 Chrome DevTools MCP<br>
+      • Google 技术分享，DevOps 实战交流<br>
+      • GDG 与 DevFest 精神传递
+    </p>
+    <div class="contact">
+      主办人：Gray Miller &nbsp;|&nbsp; DevOps &nbsp;|&nbsp; 美食爱好者<br>
+      联系方式：<a href="mailto:graymiller@outloou.com">graymiller@outloou.com</a>
+    </div>
+  </div>
+  <div class="footer">
+    &copy; 2025 Gray Miller | Google DevFest Workshop
+  </div>
+</body>
+</html>
