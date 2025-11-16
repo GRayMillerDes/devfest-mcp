@@ -3,46 +3,33 @@ on:
   push:
     branches:
       - main
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4 # 推荐更新到最新版本
+        uses: actions/checkout@v4
         with:
-          # 部署到 gh-pages/main 不需要保留凭据，默认 token 即可
-          fetch-depth: 0 
-          
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '18'
-          cache: 'npm' # 启用缓存，加速依赖安装
-          
-      - name: Install dependencies
-        # 如果 npm install 失败，工作流应该停止，而不是继续部署
-        run: npm install 
-        
-      # --- 新增步骤：设置 Git 用户信息 ---
+          persist-credentials: false # ensure we can use a PAT for pushing
+          fetch-depth: 0
+
+      - name: Verify GH_PAGES_TOKEN (diagnostic)
+        shell: bash
+        run: |
+          echo "Checking repository API with provided token (will not print token)..."
+          http_code=$(curl -s -o /dev/null -w "%{http_code}" -H "Authorization: token ${{ secrets.GH_PAGES_TOKEN }}" "https://api.github.com/repos/${{ github.repository }}/branches") || true
+          echo "Repository API HTTP status: $http_code"
+
       - name: Configure Git User
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-      # --- 移除 Verify 步骤，因为它并不能解决权限问题 ---
-      
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          # 关键更改 1: 使用默认的 GITHUB_TOKEN
-          # 默认 token 权限由仓库的“Workflow Permissions”控制，更安全且方便管理。
-          github_token: ${{ secrets.GITHUB_TOKEN }} 
-          
-          # 关键更改 2: 指定目标分支为 main (假设您已在设置中配置 Pages 部署到 main)
-          publish_branch: main 
-          
-          # 关键更改 3: 确保 publish_dir 指向网站的根目录或构建输出目录
+          personal_token: ${{ secrets.GH_PAGES_TOKEN }}
           publish_dir: ./
-          
-          # 假设您的网站是纯静态文件，如果需要覆盖历史记录，可以添加：
-          # force_orphan: true
+          publish_branch: gh-pages
+          allow_empty_commit: true
