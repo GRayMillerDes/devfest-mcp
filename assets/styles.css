@@ -128,9 +128,6 @@ body {
 .links ul li a:hover { background: #f3e8ff; color: #9333ea; }
 
 /* anchor link helper */
-.anchor-links { display:flex; gap:12px; margin-top:6px; flex-wrap:wrap; }
-.anchor-links a { color:#6b46c1; text-decoration:none; font-weight:700; }
-.anchor-links a:hover { text-decoration:underline; }
 
 /* --- Image removal helpers --- */
 /* Hide all <img>, <picture>, and inline SVGs */
