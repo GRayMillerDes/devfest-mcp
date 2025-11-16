@@ -1,0 +1,143 @@
+/* Shared styles for DevFest MCP site */
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
+
+:root { box-sizing: border-box; }
+*, *::before, *::after { box-sizing: inherit; }
+
+body {
+  margin: 0;
+  font-family: 'Roboto', 'Montserrat', Arial, sans-serif;
+  background: #f6f8fa;
+  color: #22223b;
+}
+.navbar {
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(107, 70, 193, 0.08);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 0;
+  border-bottom: 1.5px solid #e9d5ff;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+.navbar-inner {
+  display: flex;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  align-items: center;
+  padding: 0 24px;
+  justify-content: space-between;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.brand .title {
+  font-weight: 900;
+  font-size: 1.05rem;
+  background: linear-gradient(135deg, #6b46c1, #9333ea);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.nav-links { margin-left: auto; display:flex; gap:0; align-items:center; }
+.nav-links a { padding: 16px 18px; }
+.navbar a {
+  color: #6b46c1;
+  text-decoration: none;
+  font-weight: 700;
+  letter-spacing: 1px;
+  font-size: 1.08em;
+  padding: 18px 22px;
+  border-radius: 0;
+  transition: background 0.2s, color 0.2s;
+  display: block;
+}
+.navbar a:hover { background: #f3e8ff; color: #9333ea; }
+
+.hero, .card {
+  max-width: 900px;
+  margin: 48px auto 0 auto;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 8px 32px rgba(107, 70, 193, 0.10);
+  padding: 56px 48px 40px 48px;
+  border: 1.5px solid #e9d5ff;
+  position: relative;
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  top: -12px;
+  left: 40px;
+  width: 60px;
+  height: 5px;
+  background: linear-gradient(90deg, #6b46c1, #9333ea);
+  border-radius: 2px;
+}
+.hero h1 {
+  margin: 0 0 18px 0;
+  font-size: 2.2em;
+  font-weight: 900;
+  background: linear-gradient(135deg, #6b46c1, #9333ea);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: 1px;
+}
+.hero .topic { color: #7c3aed; font-size: 1.05em; margin: 8px 0 18px 0; letter-spacing: 0.8px; font-weight: 700; }
+.hero p, .card p { font-size: 1.04em; line-height: 1.8; margin: 12px 0; color: #4a5568; }
+.hero p, .card p { font-size: 1.12em; line-height: 1.85; margin: 16px 0; color: #4a5568; }
+.card h2 { color: #6b46c1; margin-top: 0; font-size: 2.1em; font-weight: 900; letter-spacing: 1.5px; display: flex; align-items: center; gap: 10px; }
+.card h2::before { content: "🎉"; display: inline-block; }
+.contact { margin-top: 38px; font-size: 1.08em; padding: 16px 32px; background: linear-gradient(90deg, #6b46c1, #9333ea); border-radius: 14px; display: inline-block; color: #fff; box-shadow: 0 4px 16px rgba(107, 70, 193, 0.18); font-weight: 500; transition: transform 0.3s ease; }
+.contact:hover { transform: translateY(-2px) scale(1.03); }
+.contact a { color: #e9d5ff; text-decoration: underline; }
+.contact-box { margin-top: 32px; background: linear-gradient(90deg, #f3e8ff, #fae8ff); border-radius: 12px; padding: 22px 28px; display: inline-block; font-size: 1.08em; color: #6b21a8; border: 2px solid #d8b4fe; font-weight: 600; }
+.footer { text-align: center; font-size: 1.08em; color: #6b46c1; background: none; margin: 60px 0 20px 0; letter-spacing: 1px; }
+
+@media (max-width: 700px) {
+  .navbar-inner { padding: 0 8px; }
+  .hero, .card { margin: 18px 8px 0 8px; padding: 28px 12px 18px 12px; border-radius: 12px; }
+  .hero h1 { font-size: 1.7em; }
+  .hero .topic { font-size: 1em; }
+  .hero p, .card p { font-size: 0.98em; }
+  .contact { font-size: 0.95em; padding: 10px 12px; }
+  .footer { font-size: 0.9em; margin: 24px 0 8px 0; }
+}
+
+/* Additional links block */
+.links {
+  max-width: 900px;
+  margin: 24px auto;
+  background: transparent;
+  padding: 8px 24px;
+  color: #4a5568;
+}
+.links h3 {
+  margin: 0 0 8px 0;
+  color: #6b46c1;
+  font-size: 1.1em;
+}
+.links ul { list-style: none; padding: 0; margin: 6px 0 0 0; display: flex; gap: 12px; flex-wrap: wrap; }
+.links ul li a { color: #6b46c1; font-weight: 700; text-decoration: none; padding: 6px 10px; border-radius: 8px; }
+.links ul li a:hover { background: #f3e8ff; color: #9333ea; }
+
+/* anchor link helper */
+
+/* --- Image removal helpers --- */
+/* Hide all <img>, <picture>, and inline SVGs */
+img, picture, svg { display: none !important; width: 0 !important; height: 0 !important; }
+
+/* Remove background images applied via CSS */
+*[style*="background-image"] { background-image: none !important; }
+*[class*="bg-"], [class*="background"] { background-image: none !important; }
+
+/* Fallback: force any background on elements to none */
+html, body, .hero, .card, .links { background-image: none !important; }
+
+
