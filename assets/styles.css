@@ -25,13 +25,27 @@ body {
 }
 .navbar-inner {
   display: flex;
-  gap: 0;
   width: 100%;
   max-width: 1100px;
   margin: 0 auto;
   align-items: center;
   padding: 0 24px;
+  justify-content: space-between;
 }
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.brand .title {
+  font-weight: 900;
+  font-size: 1.05rem;
+  background: linear-gradient(135deg, #6b46c1, #9333ea);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.nav-links { margin-left: auto; display:flex; gap:0; align-items:center; }
+.nav-links a { padding: 16px 18px; }
 .navbar a {
   color: #6b46c1;
   text-decoration: none;
@@ -67,15 +81,16 @@ body {
 }
 .hero h1 {
   margin: 0 0 18px 0;
-  font-size: 2.7em;
+  font-size: 2.2em;
   font-weight: 900;
   background: linear-gradient(135deg, #6b46c1, #9333ea);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
 }
-.hero .topic { color: #7c3aed; font-size: 1.22em; margin: 10px 0 32px 0; letter-spacing: 1.2px; font-weight: 700; }
+.hero .topic { color: #7c3aed; font-size: 1.05em; margin: 8px 0 18px 0; letter-spacing: 0.8px; font-weight: 700; }
+.hero p, .card p { font-size: 1.04em; line-height: 1.8; margin: 12px 0; color: #4a5568; }
 .hero p, .card p { font-size: 1.12em; line-height: 1.85; margin: 16px 0; color: #4a5568; }
 .card h2 { color: #6b46c1; margin-top: 0; font-size: 2.1em; font-weight: 900; letter-spacing: 1.5px; display: flex; align-items: center; gap: 10px; }
 .card h2::before { content: "🎉"; display: inline-block; }
@@ -111,4 +126,10 @@ body {
 .links ul { list-style: none; padding: 0; margin: 6px 0 0 0; display: flex; gap: 12px; flex-wrap: wrap; }
 .links ul li a { color: #6b46c1; font-weight: 700; text-decoration: none; padding: 6px 10px; border-radius: 8px; }
 .links ul li a:hover { background: #f3e8ff; color: #9333ea; }
+
+/* anchor link helper */
+.anchor-links { display:flex; gap:12px; margin-top:6px; flex-wrap:wrap; }
+.anchor-links a { color:#6b46c1; text-decoration:none; font-weight:700; }
+.anchor-links a:hover { text-decoration:underline; }
+
 
