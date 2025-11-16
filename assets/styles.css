@@ -132,4 +132,15 @@ body {
 .anchor-links a { color:#6b46c1; text-decoration:none; font-weight:700; }
 .anchor-links a:hover { text-decoration:underline; }
 
+/* --- Image removal helpers --- */
+/* Hide all <img>, <picture>, and inline SVGs */
+img, picture, svg { display: none !important; width: 0 !important; height: 0 !important; }
+
+/* Remove background images applied via CSS */
+*[style*="background-image"] { background-image: none !important; }
+*[class*="bg-"], [class*="background"] { background-image: none !important; }
+
+/* Fallback: force any background on elements to none */
+html, body, .hero, .card, .links { background-image: none !important; }
+
 
