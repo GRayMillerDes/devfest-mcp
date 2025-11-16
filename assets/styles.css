@@ -94,3 +94,21 @@ body {
   .contact { font-size: 0.95em; padding: 10px 12px; }
   .footer { font-size: 0.9em; margin: 24px 0 8px 0; }
 }
+
+/* Additional links block */
+.links {
+  max-width: 900px;
+  margin: 24px auto;
+  background: transparent;
+  padding: 8px 24px;
+  color: #4a5568;
+}
+.links h3 {
+  margin: 0 0 8px 0;
+  color: #6b46c1;
+  font-size: 1.1em;
+}
+.links ul { list-style: none; padding: 0; margin: 6px 0 0 0; display: flex; gap: 12px; flex-wrap: wrap; }
+.links ul li a { color: #6b46c1; font-weight: 700; text-decoration: none; padding: 6px 10px; border-radius: 8px; }
+.links ul li a:hover { background: #f3e8ff; color: #9333ea; }
+
